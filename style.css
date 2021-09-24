@@ -113,3 +113,57 @@ section div:first-child span {
 .form span {
     color: var(--red);
 }
+/*****************
+responsive for mob
+*****************/
+@media (max-width:768px) {
+    body {
+        height: 1166px;
+    }
+    .container {
+        width: 90vw;
+        flex-direction: column;
+        text-align: center;
+    }
+    section {
+        width: 100%;
+    }
+    h1 {
+        font-size: 28px;
+        line-height: 36px;
+        padding-top: 100px;
+    }
+    section:last-child {
+        padding: 60px 0;
+    }
+    section div:first-child p {
+        width: 60%;
+        margin: 0 auto;
+    }
+    .form {
+        height: 75vh;
+    }
+    .form p {
+        width: 80%;
+        margin: 0 auto;
+    }
+    .bg-image {
+        height: 1166px;
+    }
+}  
+@media (max-height:567px) {
+    .form {
+        height: 150vh;
+    }
+    .container {
+        width: 90vw;
+        flex-direction: column;
+        text-align: center;
+    }
+    section {
+        width: 100%;
+    }
+    body {
+        height: auto;
+    }
+}
