@@ -115,6 +115,9 @@ right side
     color: gray;
     font-weight: 600;
 }
+.form input.placeholder-red::placeholder { 
+    color:red
+    }
 .form p {
     color: rgb(186, 183, 212);
     font-size: 11px;
@@ -123,6 +126,7 @@ right side
     color: var(--red);
     cursor: pointer;
 }
+
 .mesagge {
     color: var(--red);
     width: 91%;

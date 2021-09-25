@@ -39,10 +39,12 @@ btn.addEventListener('click', function() {
         email.style.border = "1px solid var(--red)";
         email.placeholder ='email@example/com';
         errorEmail.classList.add("active");
+        email.classList.add("placeholder-red");
     } else {
         email.style.border = "1px solid lightgray";
         emailMesagge.textContent = "";
         errorEmail.classList.remove("active");
+        email.placeholder ='';
     }
     if (pass.value == '') {
         passMesagge.textContent = "Password cannot be empty";
