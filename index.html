@@ -19,18 +19,35 @@
   </section>
   <!-- right side -->
   <section>
-    <div>
+    <div class="top">
       <p><span>Try it free 7 days</span> then $20/mo. thereafter</p>
     </div>
     <div class="form">
-      <input type="text" id="first-name" name="name" placeholder="First Name" />
-      <input type="text" id="last-name" name="name" placeholder="Last Name" />
+      <div>
+      <input type="text" id="first-name" name="first-name" placeholder="First Name"/>
+      <img src="images/icon-error.svg" class="error-firstN" alt="error">
+      </div>
+      <div class="mesagge first-mesagge active"></div>
+      <div>
+      <input type="text" id="last-name" name="last-name" placeholder="Last Name" />
+      <img src="images/icon-error.svg" class="error-lastN" alt="error">  
+      </div>
+      <div class="mesagge last-mesagge"></div>
+      <div>
       <input type="email" id="email" name="email" placeholder="Email Address" />
+      <img src="images/icon-error.svg" class="error-email" alt="error">
+      </div>
+      <div class="mesagge email-mesagge"></div>
+      <div>
       <input type="password" id="pass" name="password" placeholder="Password" />
+      <img src="images/icon-error.svg" class="error-pass" alt="error">
+      </div>
+      <div class="mesagge pass-mesagge"></div>
       <button>CLAIM YOUR FREE TRIAL</button>
       <p>By clicking the button, you are agreeing to our <span>Terms and Services</span></p>
     </div>
   </section>
   </div>
+  <script src="script.js"></script>
 </body>
 </html>

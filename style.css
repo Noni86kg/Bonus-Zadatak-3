@@ -45,13 +45,14 @@ section {
 }
 button {
     background: var(--green);
-    padding: 25px 0;
+    padding: 22px 0;
     box-shadow: 0px 5px 0px 0px rgba(0, 0, 0, 0.2);
     border-radius: 15px;
     border: none;
     color: white;
     font-weight: 700;
     width: 90%;
+    margin: 10px 0;
 }
 button:hover {
     cursor: pointer;
@@ -69,38 +70,46 @@ h1 {
 /***************
 right side
 ***************/
-section div:first-child {
+.top {
     background-color: var(--purple);
     border-radius: 15px;
-    padding: 25px 0;
+    padding: 22px 0;
     text-align: center;
     margin-bottom: 25px;
     box-shadow: 0px 10px 0px 0px rgba(0, 0, 0, 0.2);
 }
-section div:first-child span {
+.top span {
     font-weight: 700;
 }
 .form {
     background: white;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
     text-align: center;
-    height: 60vh;
     border-radius: 15px;
     align-items: center;
     padding-top: 40px;
+    padding-bottom: 20px;
     box-shadow: 0px 10px 0px 0px rgba(0, 0, 0, 0.2);
 }
+.form div {
+    display: flex;
+    align-items: center;
+    width: 90%
+}
+.form div:nth-child(odd) {
+    margin: 10px 0;
+}
 .form input {
-    width: 90%;
-    line-height: 53px;
-    padding-left: 25px;
+    width: 100%;
+    padding: 22px 0 22px 25px;
     border-radius: 5px;
     font-weight: 600;
     outline-color: var(--purple);
     caret-color: var(--purple);
     border: 1px solid lightgray;
+    position: relative;
+
 }
 .form input::placeholder {
     color: gray;
@@ -112,6 +121,30 @@ section div:first-child span {
 }
 .form span {
     color: var(--red);
+    cursor: pointer;
+}
+.mesagge {
+    color: var(--red);
+    width: 91%;
+    text-align: right;
+    display: flex;
+    justify-content: end;
+}
+.error-firstN,
+.error-lastN,
+.error-email,
+.error-pass   {
+    height: 24px;
+    width: 24px;
+    position: absolute;
+    right: calc(40px + 2%);
+    display: none;
+}
+.error-firstN.active,
+.error-lastN.active,
+.error-email.active,
+.error-pass.active   {
+    display: block;
 }
 /*****************
 responsive for mob
@@ -140,9 +173,6 @@ responsive for mob
         width: 60%;
         margin: 0 auto;
     }
-    .form {
-        height: 75vh;
-    }
     .form p {
         width: 80%;
         margin: 0 auto;
@@ -152,9 +182,6 @@ responsive for mob
     }
 }  
 @media (max-height:567px) {
-    .form {
-        height: 150vh;
-    }
     .container {
         width: 90vw;
         flex-direction: column;
