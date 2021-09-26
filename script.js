@@ -11,11 +11,12 @@ const errorFirstName = document.querySelector('.error-firstN');
 const errorLastName = document.querySelector('.error-lastN');
 const errorEmail = document.querySelector('.error-email');
 const errorPass = document.querySelector('.error-pass');
-const correctMails = ["nonisc2@gmail.com",
-"nikola.pavlovic@quantoxtechnology.com",
-"big.boy@gmail.com",
-"cowboys.from.hell@gmail.com",
-];
+
+function validateEmail(email) {
+    const re =
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+  }
 
 btn.addEventListener('click', function() {
     if (firstName.value == '') {
@@ -38,22 +39,13 @@ btn.addEventListener('click', function() {
         lastMesagge.textContent = "";
         errorLastName.classList.remove("active");
     }
-    for (let i=0; i<correctMails.length; i++) {
-        if (correctMails[i] == email.value.toLowerCase()) {
-            email.style.border = "1px solid lightgray";
-            emailMesagge.textContent = "";
-            errorEmail.classList.remove("active");
-            email.placeholder ='';
-            return emailMesagge.textContent = "";
-        }
-    }
-    if (email.value == '') {
+    if (!validateEmail(email.value)) {
         emailMesagge.textContent = "Looks like this is not an email";
         email.style.border = "1px solid var(--red)";
         email.placeholder ='email@example/com';
         errorEmail.classList.add("active");
         email.classList.add("placeholder-red");
-    } else {
+    } else if (validateEmail(email.value)) {
         email.style.border = "1px solid lightgray";
         emailMesagge.textContent = "";
         errorEmail.classList.remove("active");
