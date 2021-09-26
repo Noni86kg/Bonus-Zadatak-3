@@ -11,7 +11,11 @@ const errorFirstName = document.querySelector('.error-firstN');
 const errorLastName = document.querySelector('.error-lastN');
 const errorEmail = document.querySelector('.error-email');
 const errorPass = document.querySelector('.error-pass');
-
+const correctMails = ["nonisc2@gmail.com",
+"nikola.pavlovic@quantoxtechnology.com",
+"big.boy@gmail.com",
+"cowboys.from.hell@gmail.com",
+];
 
 btn.addEventListener('click', function() {
     if (firstName.value == '') {
@@ -33,6 +37,15 @@ btn.addEventListener('click', function() {
         lastName.style.border = "1px solid lightgray";
         lastMesagge.textContent = "";
         errorLastName.classList.remove("active");
+    }
+    for (let i=0; i<correctMails.length; i++) {
+        if (correctMails[i] == email.value.toLowerCase()) {
+            email.style.border = "1px solid lightgray";
+            emailMesagge.textContent = "";
+            errorEmail.classList.remove("active");
+            email.placeholder ='';
+            return emailMesagge.textContent = "";
+        }
     }
     if (email.value == '') {
         emailMesagge.textContent = "Looks like this is not an email";
