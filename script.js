@@ -62,3 +62,32 @@ btn.addEventListener('click', function() {
         errorPass.classList.remove("active");
     }
 })
+
+firstName.addEventListener('click', function(e) {
+    firstName.style.border = "1px solid lightgray";
+    firstMesagge.textContent = "";
+    firstName.placeholder="First Name";
+    errorFirstName.classList.remove("active");
+})
+
+lastName.addEventListener('click', function(e) {
+    lastName.style.border = "1px solid lightgray";
+    lastMesagge.textContent = "";
+    lastName.placeholder="First Name";
+    errorLastName.classList.remove("active");
+})
+
+email.addEventListener('click', function(e) {
+    email.style.border = "1px solid lightgray";
+    emailMesagge.textContent = "";
+    email.placeholder="Email Address";
+    errorEmail.classList.remove("active");
+    email.classList.remove("placeholder-red");
+})
+
+pass.addEventListener('click', function(e) {
+    pass.style.border = "1px solid lightgray";
+    passMesagge.textContent = "";
+    pass.placeholder="Password";
+    errorPass.classList.remove("active");
+})
